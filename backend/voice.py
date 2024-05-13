@@ -2,15 +2,6 @@ from typing import Literal
 
 import pyttsx3
 
-# engine = pyttsx3.init()
-# engine.setProperty('voice', "com.apple.ttsbundle.Daniel-premium")
-# engine.setProperty('volume', 0.8)
-# engine.setProperty('rate', 220)
-#
-# engine.say("I will speak this text")
-# engine.runAndWait()
-
-
 class SpeakerApple:
     def __init__(self, voice: dict):
         self.engine = pyttsx3.init()

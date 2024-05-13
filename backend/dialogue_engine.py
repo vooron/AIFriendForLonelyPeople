@@ -1,7 +1,3 @@
-import openai
-
-#
-# openai.api_key = "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"
 from openai import OpenAI
 
 

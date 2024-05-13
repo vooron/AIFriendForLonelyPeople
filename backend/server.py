@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app)
 
 
-openai_api_key = "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"
+openai_api_key = "<your key>"
 
 dialogue_manager = DialogueManager({
     "Bob": DialogueEngine(
