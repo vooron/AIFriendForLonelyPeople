@@ -1,0 +1,48 @@
+
+
+.wrapper {
+    background: rgb(2,0,36);
+    background: linear-gradient(354deg, rgba(2,0,36,1) 10%, rgba(9,9,121,1) 56%, rgba(1,28,113,1) 100%);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.controlsWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 350px;
+    padding: 5px 10px;
+}
+
+.messageInputWrapper {
+    display: flex;
+    background-color: #cccccc;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.microphoneWrapper {
+    margin-left: 20px;
+    background-color: #ffffff50;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+.messageInput {
+    outline: none;
+    padding: 10px 5px;
+    width: 100%;
+    background: none;
+    border: none;
+}
+
+.messageBtn {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-left: 1px solid #000;
+}
