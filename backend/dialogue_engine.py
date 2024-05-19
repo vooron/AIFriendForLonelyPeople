@@ -2,15 +2,17 @@ from openai import OpenAI
 
 
 class DialogueEngine:
-    keep_history_messages = 20
+    keep_history_messages = 40
 
     history: list
     role_description: dict
+    model: str
 
     client: OpenAI
 
-    def __init__(self, api_key: str, role_prompt: str):
+    def __init__(self, api_key: str, role_prompt: str, model="gpt-3.5-turbo"):
         self.client = OpenAI(api_key=api_key)
+        self.model = model
         self.history = []
         self.role_description = {
             "role": "system",
@@ -25,7 +27,7 @@ class DialogueEngine:
         })
 
         response = self.client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model=self.model,
             messages=[
                 self.role_description,
                 *self.history
@@ -61,5 +63,8 @@ class DialogueManager:
 
         return engine.add_message(message)
 
+    def add_dialogue(self, recipient: str, engine: DialogueEngine):
+        if recipient in self.dialogs_mapping:
+            raise Exception("Already exists")
 
-
+        self.dialogs_mapping[recipient] = engine

@@ -16,5 +16,10 @@ export const contacts = {
     "name": "Bob",
     "description": "Psychologist"
   },
+  "Sirko": {
+    "name": "Sirko",
+    "description": "Справжній козак"
+  }
 };
 
+export const backendServer = "http://127.0.0.1:5001"

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import style from "./DialogPage.module.css"
 import {Link, useParams} from "react-router-dom";
-import {contacts} from "../constants";
+import {backendServer, contacts} from "../constants";
 
 
 const SpeachSvg = () => {
@@ -145,7 +145,7 @@ const DialogPage = () => {
   const onSend = async () => {
     await setMessageText("");
 
-    const response = await fetch("http://127.0.0.1:5000/message_stream", {
+    const response = await fetch(`${backendServer}/message_stream`, {
       method: "POST",
       body: JSON.stringify({
         "recipient": username,
