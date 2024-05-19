@@ -22,7 +22,10 @@ dialogue_manager = DialogueManager({
         openai_api_key, "You are a professional psychologist. Your name is Tom (30 y.o. female)"),
     "Sirko": DialogueEngine(
         openai_api_key, "Ти український козак. Воля для тебе то найбільший скарб, а Україна — мати.",
-        model="ft:gpt-3.5-turbo-0125:personal:kozak-test:9PHKIrvI")
+        model="ft:gpt-3.5-turbo-0125:personal:kozak-test:9PHKIrvI"),
+    "Mamai": DialogueEngine(
+        openai_api_key, "Ти український козак.",
+        model="ft:gpt-3.5-turbo-0125:personal:kozak-new:9QcnRcsp")
 })
 
 voice_mapping: dict[str, SpeakerOpenAi] = {
@@ -31,6 +34,7 @@ voice_mapping: dict[str, SpeakerOpenAi] = {
     "Michael": SpeakerOpenAi(openai_api_key, "onyx"),
     "Kate": SpeakerOpenAi(openai_api_key, "nova"),
     "Sirko": SpeakerOpenAi(openai_api_key, "onyx"),
+    "Mamai": SpeakerOpenAi(openai_api_key, "onyx"),
 }
 
 
@@ -48,6 +52,7 @@ def stream_bytes():
         response = dialogue_manager.add_message(recipient, message)
         return Response(voice_mapping[recipient].stream_bytes(response), mimetype='audio/mp3')
     except Exception as e:
+        print(e)
         return jsonify({"error": str(e)}), 400
 
 

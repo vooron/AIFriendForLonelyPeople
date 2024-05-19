@@ -17,8 +17,12 @@ export const contacts = {
     "description": "Psychologist"
   },
   "Sirko": {
-    "name": "Sirko",
+    "name": "Сірко",
     "description": "Справжній козак"
+  },
+  "Mamai": {
+    "name": "Мамай",
+    "description": "Справжній козак. V2"
   }
 };
 
